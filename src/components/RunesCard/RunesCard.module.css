@@ -8,6 +8,7 @@
   background-color: var(--secondary-color); 
   border-radius: calc(var(--space-unit) * 2);
   width: max-content;
+  border: 2px solid #1A3453; 
 }
 
 
@@ -59,10 +60,10 @@
 .runeActive {
   filter: none;
   opacity: 1;
-  border: 1px solid #c89b3c; 
+  border: 4px solid #1A3453; 
 }
 
 .runeInactive {
   filter: grayscale(55%);
-  opacity: 0.25;
+  opacity: 0.4;
 }

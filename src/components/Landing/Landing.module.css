@@ -6,6 +6,8 @@
 
 .containerTop{
     max-width: fit-content;
+    margin-bottom: calc(var(--space-unit) * 2);
+
 }
 
 .heroText{

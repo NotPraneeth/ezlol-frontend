@@ -9,9 +9,8 @@ function App() {
 
   return (
     <>
-      {/* <Navbar/>
-      <Landing /> */}
-      <RunesCard />
+      <Navbar/>
+      <Landing />
     </>
   )
 }

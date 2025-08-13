@@ -6,6 +6,7 @@ export const RunesCard = () => {
     const [runesData, setRunesData] = useState(null)
     const [runesTree, setRunesTree] = useState(null)
 
+
     useEffect(() => {
         Promise.all([
             axios.get('http://localhost:3000/api/test/Kayn/LeeSin'),

@@ -3,6 +3,8 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 import styles from './Landing.module.css'
 
+import { RunesCard } from '../RunesCard/RunesCard.jsx'
+
 export const Landing = () => {
 
   return (
@@ -22,7 +24,7 @@ export const Landing = () => {
                 
             </div>
             <div className = {styles.landingContainerBottom}>
-
+                <RunesCard />
             </div>
         </div>
     </>
