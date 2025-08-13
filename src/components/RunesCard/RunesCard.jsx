@@ -6,22 +6,15 @@ export const RunesCard = () => {
     const [runesData, setRunesData] = useState(null)
     const [runesTree, setRunesTree] = useState(null)
 
-
     useEffect(() => {
-    axios.get('http://localhost:3000/api/test/Kayn/LeeSin')
-        .then(res => {
-            setRunesData(res.data.runes)
-        })
-
-    axios.get('https://ddragon.leagueoflegends.com/cdn/15.16.1/data/en_US/runesReforged.json')
-        .then(res => {
-            setRunesTree(res.data)
-        })
+        Promise.all([
+            axios.get('http://localhost:3000/api/test/Kayn/LeeSin'),
+            axios.get('https://ddragon.leagueoflegends.com/cdn/15.16.1/data/en_US/runesReforged.json')
+        ]).then(([matchResponse, ddragonResponse]) => {
+            setRunesData(matchResponse.data.runes);
+            setRunesTree(ddragonResponse.data);
+        }).catch(error => console.error("Error fetching data:", error));
     }, [])
-
-    // useEffect(()=>{
-    //     console.log(runesTree)
-    // },[runesTree])
 
     if (!runesData || !runesTree) {
         return <div>Loading...</div>
@@ -30,11 +23,12 @@ export const RunesCard = () => {
     const primary = runesData.primary
     const primaryTree = runesTree.find(tree => tree.id === primary.styleId)
 
-    // console.log(primaryTree)
-    // console.log(primary.styleId, runesTree.map(t => t.id))
+    const secondary = runesData.secondary;
+    const secondaryTree = runesTree.find(tree => tree.id === secondary.styleId);
 
-
-
+    if (!primaryTree || !secondaryTree) {
+        return <div>Processing rune data...</div>
+    }
 
   return (
     <>
@@ -56,12 +50,19 @@ export const RunesCard = () => {
                 </div>
                 <div className = {styles.right}>
                     <div className = {styles.rightTop}>
-                        <div className = {styles.mainRune}></div>
+                        <div className = {styles.mainRune}><img className={styles.mainRuneImage} src={runesData.secondary.styleIcon}></img></div>
                     </div>
-                    <div className = {styles.runes}></div>
+                    <div className = {styles.runes}>
+                        {secondaryTree.slots.map((slot, slotIndex) => (
+                            <div key={slotIndex} className={styles.runeRow}>
+                                {slot.runes.map(rune => (
+                                <img key={rune.id} src={`https://ddragon.leagueoflegends.com/cdn/img/${rune.icon}`} alt={rune.key} />
+                                ))}
+                            </div>
+                            ))}
+                    </div>
                 </div>
             </div>
-
         </div>
     </>
   )
