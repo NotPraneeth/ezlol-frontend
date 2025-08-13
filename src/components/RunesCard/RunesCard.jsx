@@ -26,6 +26,11 @@ export const RunesCard = () => {
     const secondary = runesData.secondary;
     const secondaryTree = runesTree.find(tree => tree.id === secondary.styleId);
 
+    const selectedPerkIds = new Set([
+        ...primary.perks.map(p => p.perkId),
+        ...secondary.perks.map(p => p.perkId),
+    ]);
+
     if (!primaryTree || !secondaryTree) {
         return <div>Processing rune data...</div>
     }
@@ -41,9 +46,11 @@ export const RunesCard = () => {
                     <div className = {styles.runes}>
                         {primaryTree.slots.map((slot, slotIndex) => (
                             <div key={slotIndex} className={styles.runeRow}>
-                                {slot.runes.map(rune => (
-                                <img key={rune.id} src={`https://ddragon.leagueoflegends.com/cdn/img/${rune.icon}`} alt={rune.key} />
-                                ))}
+                                {slot.runes.map(rune => {
+                                const isActive = selectedPerkIds.has(rune.id);
+                                return(
+                                <img key={rune.id} className={isActive ? styles.runeActive : styles.runeInactive} src={`https://ddragon.leagueoflegends.com/cdn/img/${rune.icon}`} alt={rune.key} />
+                                )})}
                             </div>
                             ))}
                     </div>
@@ -55,9 +62,13 @@ export const RunesCard = () => {
                     <div className = {styles.runes}>
                         {secondaryTree.slots.map((slot, slotIndex) => (
                             <div key={slotIndex} className={styles.runeRow}>
-                                {slot.runes.map(rune => (
-                                <img key={rune.id} src={`https://ddragon.leagueoflegends.com/cdn/img/${rune.icon}`} alt={rune.key} />
-                                ))}
+                                {slot.runes.map(rune => {
+
+                                const isActive = selectedPerkIds.has(rune.id);
+                                return (
+                                <img key={rune.id} src={`https://ddragon.leagueoflegends.com/cdn/img/${rune.icon}`} alt={rune.key} className={isActive ? styles.runeActive : styles.runeInactive} />
+                                )})
+                                }
                             </div>
                             ))}
                     </div>

@@ -13,7 +13,7 @@
 
 .container {
   display: flex;
-  gap: calc(var(--space-unit) * 6); 
+  gap: calc(var(--space-unit) * 4); 
   max-width: fit-content;
 }
 
@@ -39,21 +39,30 @@
 .runeRow {
   display: grid;
   grid-template-columns: repeat(3, 36px);
-  margin-bottom: 12px;
-  gap: 28px;
-  max-width: fit-content;
+  margin-bottom: calc(var(--space-unit)*1);
+  gap: calc(var(--space-unit)*2);
+  padding-right: calc(var(--space-unit)*2);
 }
 
 .runeRow img {
-  width: calc(var(--space-unit) * 5);
-  height: calc(var(--space-unit) * 5);
+  width: calc(var(--space-unit) * 4);
+  height: calc(var(--space-unit) * 4);
   object-fit: contain;
   border-radius: 50%;
-  padding: 3px;
   transition: transform 0.15s ease, background-color 0.15s ease;
 }
 
 .runeRow img:hover {
   transform: scale(1.1);
-  background-color: #333;
+}
+
+.runeActive {
+  filter: none;
+  opacity: 1;
+  border: 1px solid #c89b3c; 
+}
+
+.runeInactive {
+  filter: grayscale(55%);
+  opacity: 0.25;
 }
