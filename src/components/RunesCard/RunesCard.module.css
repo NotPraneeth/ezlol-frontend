@@ -1,0 +1,137 @@
+.wrapper {
+    background-color: #0f1526; /* Dark blue background */
+    padding: 24px;
+    border-radius: 8px;
+    font-family: sans-serif;
+    color: white;
+    max-width: 600px; /* Example max-width */
+    margin: auto;
+}
+
+.runesContainer {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.runeColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Tree styles */
+.treeContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.treeHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.treeIcon {
+    width: 32px;
+    height: 32px;
+}
+
+.treeName {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.runeRow {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.runeSlot {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Base styles for rune images */
+.runeImageActive,
+.runeImageInactive {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Keystone image is larger */
+.runeRow:first-child .runeImageActive,
+.runeRow:first-child .runeImageInactive {
+    width: 56px;
+    height: 56px;
+}
+
+
+/* Active vs Inactive styles */
+.runeImageActive {
+    filter: grayscale(0%);
+    opacity: 1;
+    border: 2px solid #c8aa6e; /* Gold border for active */
+    box-shadow: 0 0 10px #c8aa6e;
+}
+
+.runeImageInactive {
+    filter: grayscale(100%);
+    opacity: 0.25;
+}
+
+/* Stat Shard Styles */
+.statShardContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 10px;
+    border-top: 1px solid #2a344e;
+    margin-top: 10px;
+}
+
+.statShardActive,
+.statShardInactive {
+    width: 28px;
+    height: 28px;
+    background-color: #000;
+    border-radius: 50%;
+    padding: 2px;
+    transition: all 0.2s ease-in-out;
+}
+
+.statShardActive {
+    filter: grayscale(0%);
+    opacity: 1;
+    border: 1px solid #6ef3c8;
+}
+
+.statShardInactive {
+    filter: grayscale(100%);
+    opacity: 0.25;
+}
+
+
+/* The little selection indicator circles */
+.selectedIndicatorInactive,
+.selectedIndicatorActive {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    top: -4px;
+    border: 1px solid #4a5672;
+    background-color: #0f1526;
+}
+
+.selectedIndicatorActive {
+    background-color: #55c998; /* A bright green/teal for selection */
+    border-color: #55c998;
+}
