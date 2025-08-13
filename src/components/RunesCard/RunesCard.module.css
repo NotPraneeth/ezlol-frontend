@@ -45,6 +45,10 @@
   padding-right: calc(var(--space-unit)*2);
 }
 
+.secondaryTreeRuneRow:first-child{
+    display: none;
+}
+
 .runeRow img {
   width: calc(var(--space-unit) * 4);
   height: calc(var(--space-unit) * 4);

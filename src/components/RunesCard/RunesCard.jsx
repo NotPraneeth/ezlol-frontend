@@ -2,19 +2,15 @@ import styles from './RunesCard.module.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
-export const RunesCard = () => {
-    const [runesData, setRunesData] = useState(null)
+export const RunesCard = ({runesData}) => {
     const [runesTree, setRunesTree] = useState(null)
 
 
     useEffect(() => {
-        Promise.all([
-            axios.get('http://localhost:3000/api/test/Kayn/LeeSin'),
-            axios.get('https://ddragon.leagueoflegends.com/cdn/15.16.1/data/en_US/runesReforged.json')
-        ]).then(([matchResponse, ddragonResponse]) => {
-            setRunesData(matchResponse.data.runes);
-            setRunesTree(ddragonResponse.data);
-        }).catch(error => console.error("Error fetching data:", error));
+       axios.get('https://ddragon.leagueoflegends.com/cdn/15.16.1/data/en_US/runesReforged.json')
+            .then(ddragonResponse => {
+                setRunesTree(ddragonResponse.data);
+            }).catch(error => console.error("Error fetching rune tree data:", error));
     }, [])
 
     if (!runesData || !runesTree) {
@@ -62,7 +58,7 @@ export const RunesCard = () => {
                     </div>
                     <div className = {styles.runes}>
                         {secondaryTree.slots.map((slot, slotIndex) => (
-                            <div key={slotIndex} className={styles.runeRow}>
+                            <div key={slotIndex} className={`${styles.runeRow} ${styles.secondaryTreeRuneRow}`}>
                                 {slot.runes.map(rune => {
 
                                 const isActive = selectedPerkIds.has(rune.id);
