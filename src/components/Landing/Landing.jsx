@@ -9,7 +9,7 @@ export const Landing = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/test/MasterYi/LeeSin')
+        axios.get('http://localhost:3000/api/test/KSante/Garen')
             .then(response => {
                 setMatchupData(response.data);
                 setIsLoading(false);
@@ -21,13 +21,6 @@ export const Landing = () => {
             });
     }, []);
 
-    if (isLoading) {
-        return <div>Loading Matchup...</div>;
-    }
-
-    if (error) {
-        return <div>Error: {error}</div>;
-    }
 
     return (
         <>
@@ -45,6 +38,8 @@ export const Landing = () => {
                     </div>
                 </div>
                 <div className={styles.landingContainerBottom}>
+                    {isLoading && <p>Loading Matchup</p>}
+                    {error && <p>{error}</p>}
                     {matchupData && <RunesCard runesData={matchupData.runes} />}
                 </div>
             </div>

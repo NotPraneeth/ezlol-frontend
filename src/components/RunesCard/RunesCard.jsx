@@ -38,7 +38,7 @@ export const RunesCard = ({runesData}) => {
             <div className={styles.container}>
                 <div className = {styles.left}>
                     <div className = {styles.leftTop}>
-                        <div className = {styles.mainRune}><img className={styles.mainRuneImage} src={runesData.primary.styleIcon}></img></div>
+                        <div className = {styles.mainRune}><img className={styles.mainRuneImage} src={`${import.meta.env.VITE_BACKEND_API_BASE_URL}/${runesData.primary.styleIcon}`}></img></div>
                     </div>
                     <div className = {styles.runes}>
                         {primaryTree.slots.map((slot, slotIndex) => (
@@ -46,7 +46,7 @@ export const RunesCard = ({runesData}) => {
                                 {slot.runes.map(rune => {
                                 const isActive = selectedPerkIds.has(rune.id);
                                 return(
-                                <img key={rune.id} className={isActive ? styles.runeActive : styles.runeInactive} src={`https://ddragon.leagueoflegends.com/cdn/img/${rune.icon}`} alt={rune.key} />
+                                <img key={rune.id} className={isActive ? styles.runeActive : styles.runeInactive} src={`${import.meta.env.VITE_BACKEND_API_BASE_URL}/${rune.icon}`} alt={rune.key} />
                                 )})}
                             </div>
                             ))}
@@ -54,7 +54,7 @@ export const RunesCard = ({runesData}) => {
                 </div>
                 <div className = {styles.right}>
                     <div className = {styles.rightTop}>
-                        <div className = {styles.mainRune}><img className={styles.mainRuneImage} src={runesData.secondary.styleIcon}></img></div>
+                        <div className = {styles.mainRune}><img className={styles.mainRuneImage} src={`${import.meta.env.VITE_BACKEND_API_BASE_URL}/${runesData.secondary.styleIcon}`}></img></div>
                     </div>
                     <div className = {styles.runes}>
                         {secondaryTree.slots.map((slot, slotIndex) => (
@@ -63,7 +63,7 @@ export const RunesCard = ({runesData}) => {
 
                                 const isActive = selectedPerkIds.has(rune.id);
                                 return (
-                                <img key={rune.id} src={`https://ddragon.leagueoflegends.com/cdn/img/${rune.icon}`} alt={rune.key} className={isActive ? styles.runeActive : styles.runeInactive} />
+                                <img key={rune.id} src={`${import.meta.env.VITE_BACKEND_API_BASE_URL}/${rune.icon}`} alt={rune.key} className={isActive ? styles.runeActive : styles.runeInactive} />
                                 )})
                                 }
                             </div>
