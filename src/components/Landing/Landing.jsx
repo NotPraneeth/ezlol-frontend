@@ -11,7 +11,7 @@ export const Landing = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/test/KSante/Garen")
+      .get("http://localhost:3000/api/test/Kayn/LeeSin")
       .then((response) => {
         setMatchupData(response.data);
         setIsLoading(false);
@@ -65,7 +65,7 @@ export const Landing = () => {
           {matchupData && (
             <>
               <RunesCard runesData={matchupData.runes} />
-              <StartingItemsCard startingItems={matchupData.startingItems} />
+              <StartingItemsCard startingItemsAndSummoners={matchupData} />
             </>
           )}
         </div>

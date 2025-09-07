@@ -5,12 +5,20 @@ import { useState, useEffect } from 'react'
 export const RunesCard = ({runesData}) => {
     const [runesTree, setRunesTree] = useState(null)
 
-
     useEffect(() => {
-       axios.get('https://ddragon.leagueoflegends.com/cdn/15.16.1/data/en_US/runesReforged.json')
-            .then(ddragonResponse => {
+        const fetchRuneData = async () => {
+            try {
+                const versionsResponse = await axios.get('https://ddragon.leagueoflegends.com/api/versions.json');
+                const latestVersion = versionsResponse.data[0];
+                
+                const ddragonResponse = await axios.get(`https://ddragon.leagueoflegends.com/cdn/${latestVersion}/data/en_US/runesReforged.json`);
                 setRunesTree(ddragonResponse.data);
-            }).catch(error => console.error("Error fetching rune tree data:", error));
+            } catch (error) {
+                console.error("Error fetching rune definitions from Data Dragon:", error);
+            }
+        };
+
+        fetchRuneData();
     }, [])
 
     if (!runesData || !runesTree) {
