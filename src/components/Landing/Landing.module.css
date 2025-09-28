@@ -66,3 +66,9 @@
   display: flex;
   gap: calc(var(--space-unit) * 2);
 }
+
+.summonersAndSkillOrder{
+  display:flex;
+  flex-direction: column;
+  gap: calc(var(--space-unit)*1);
+}

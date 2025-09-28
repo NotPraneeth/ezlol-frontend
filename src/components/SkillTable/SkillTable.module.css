@@ -1,0 +1,53 @@
+
+.wrapper {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(5, max-content); /* 5 rows */
+  grid-template-columns: repeat(4); /* level + skill pairs */
+  gap: 0 2px;
+
+  background-color: #1a2a38;
+  padding: 16px;
+  border-radius: 12px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 500;
+  color: #e0e0e0;
+  width: fit-content;
+  max-height: fit-content;
+}
+
+/* Base styles */
+.level,
+.skill {
+  padding: 15px 12px;
+  height: fit-content;
+  text-align: center;
+  width:40px;
+  font-size: 16px;
+  min-width: 24px;
+}
+
+/* Lighter column */
+.level,
+.skill:nth-of-type(2n) {
+  background-color: #273a4e;
+}
+
+/* Darker column */
+.skill:nth-of-type(2n + 1),
+.level:nth-of-type(2n + 1) {
+  background-color: #1f3247;
+}
+
+.level {
+  color: #8a96a8;
+  font-weight: 500;
+}
+
+.skill {
+  font-weight: 600;
+}
+
+.skillOrder{
+  display:flex;
+}

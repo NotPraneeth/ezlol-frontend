@@ -3,6 +3,7 @@ import axios from "axios";
 import styles from "./Landing.module.css";
 import { RunesCard } from "../RunesCard/RunesCard.jsx";
 import { StartingItemsCard } from "../StartingItemsCard/StartingItemsCard.jsx";
+import { SkillTable } from "../SkillTable/SkillTable.jsx";
 
 export const Landing = () => {
   const [matchupData, setMatchupData] = useState(null);
@@ -65,7 +66,12 @@ export const Landing = () => {
           {matchupData && (
             <>
               <RunesCard runesData={matchupData.runes} />
-              <StartingItemsCard startingItemsAndSummoners={matchupData} />
+              <div className={styles.summonersAndSkillOrder}>
+                <StartingItemsCard startingItemsAndSummoners={matchupData} />
+                <div className={styles.skillTableComponent}>
+                  <SkillTable className={styles.skillTableComponent} skillOrder={matchupData.skillOrder} />
+                </div>
+              </div>
             </>
           )}
         </div>
