@@ -6,6 +6,8 @@
   grid-template-columns: repeat(4); /* level + skill pairs */
   gap: 0 2px;
 
+  transform: scale(1.23);
+  transform-origin: top left;
   background-color: #1a2a38;
   padding: 16px;
   border-radius: 12px;
