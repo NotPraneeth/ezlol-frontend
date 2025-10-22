@@ -72,3 +72,15 @@
   flex-direction: column;
   gap: calc(var(--space-unit)*1);
 }
+
+.mainContent{
+  display:flex;
+  flex-direction: column;
+}
+
+.pregame{
+  display:inline-flex;
+  gap: calc(var(--space-unit)*2);
+
+  width: fit-content;
+}

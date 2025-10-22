@@ -4,6 +4,7 @@ import styles from "./Landing.module.css";
 import { RunesCard } from "../RunesCard/RunesCard.jsx";
 import { StartingItemsCard } from "../StartingItemsCard/StartingItemsCard.jsx";
 import { SkillTable } from "../SkillTable/SkillTable.jsx";
+import ItemsCard from "../ItemsCard/ItemsCard.jsx";
 
 export const Landing = () => {
   const [matchupData, setMatchupData] = useState(null);
@@ -65,12 +66,18 @@ export const Landing = () => {
           {error && <p>{error}</p>}
           {matchupData && (
             <>
-              <RunesCard runesData={matchupData.runes} />
-              <div className={styles.summonersAndSkillOrder}>
-                <StartingItemsCard startingItemsAndSummoners={matchupData} />
-                <div className={styles.skillTableComponent}>
-                  <SkillTable className={styles.skillTableComponent} skillOrder={matchupData.skillOrder} />
+              <div className={styles.mainContent}>
+                <div className={styles.pregame}>
+                  <RunesCard runesData={matchupData.runes} />
+                  <div className={styles.summonersAndSkillOrder}>
+                    <StartingItemsCard startingItemsAndSummoners={matchupData} />
+                    <div className={styles.skillTableComponent}>
+                      <SkillTable className={styles.skillTableComponent} skillOrder={matchupData.skillOrder} />
+                    </div>
+                  </div>
                 </div>
+                <ItemsCard items={matchupData.items} />
+
               </div>
             </>
           )}

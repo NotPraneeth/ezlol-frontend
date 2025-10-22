@@ -142,3 +142,7 @@ body{
 
 
 
+.mainContent{
+  display:flex;
+  flex-direction: column;
+}
