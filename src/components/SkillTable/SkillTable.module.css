@@ -1,57 +1,80 @@
-
 .wrapper {
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-rows: repeat(5, max-content); /* 5 rows */
-  grid-template-columns: repeat(4); /* level + skill pairs */
-  gap: 0 2px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(6, auto);
+    /* Reverted to auto for natural height */
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns */
+    gap: 0;
 
-  transform-origin: top left;
-  background-color: #1a2a38;
-  padding: 16px;
-  border-radius: 12px;
-  font-family: 'Inter', system-ui, sans-serif;
-  font-weight: 500;
-  color: #e0e0e0;
-  width: fit-content;
-  max-height: fit-content;
+    background-color: var(--skill-table-bg);
+    /* Fallback / Border color */
+    border-radius: 8px;
+    font-family: 'Inter', system-ui, sans-serif;
+    width: fit-content;
+    /* height: 100%; Removed to prevent stretching */
+    border: 1px solid var(--skill-table-border-color);
+    /* Subtle border */
+    overflow: hidden;
+    /* For border radius */
 }
 
-/* Base styles */
-.level,
-.skill {
-  padding: 15px 12px;
-  height: fit-content;
-  text-align: center;
-  width:40px;
-  font-size: 16px;
-  min-width: 24px;
+.skillOrder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Split into two equal columns */
+    padding: 0;
+    /* Remove padding so children fill the space */
+    width: 120px;
+    /* Fixed width for consistency */
+    border-bottom: 1px solid var(--border-color);
+    /* Row divider with requested color */
 }
 
-/* Lighter column */
-.level,
-.skill:nth-of-type(2n) {
-  background-color: var(--secondary-color);
+/* Remove bottom border for the last row in each column */
+.skillOrder:nth-child(6n) {
+    border-bottom: none;
 }
 
-/* Darker column */
-.skill:nth-of-type(2n + 1),
-.level:nth-of-type(2n + 1) {
-  background-color: var(--secondary-color);
+/* Add right border to the first two columns (items 1-6 and 7-12) */
+.skillOrder:nth-child(-n+12) {
+    border-right: 1px solid var(--border-color);
+    /* Column divider with requested color */
 }
 
 .level {
-  color: #8a96a8;
-  font-weight: 500;
+    background-color: var(--skill-table-number-bg);
+    /* Number column color */
+    color: #94a3b8;
+    /* Muted text for level */
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0;
 }
 
 .skill {
-  font-weight: 600;
+    background-color: var(--skill-table-skill-bg);
+    /* Skill alphabet column color */
+    color: #ffffff;
+    /* White text for skill */
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0;
 }
 
-.skillOrder{
-  display:flex;
+.skillOrderWrapper {
+    width: fit-content;
+    margin-top: var(--space-unit);
 }
-.skillOrderWrapper{
-  width: fit-content;
+
+@media (max-width: 768px) {
+    .wrapper {
+        width: 100%;
+    }
 }

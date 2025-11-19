@@ -3,18 +3,18 @@
   gap: calc(var(--space-unit) * 2);
   padding-inline: calc(var(--space-unit) * 1);
   padding-block: calc(var(--space-unit) * 0.75);
-  background-color: var(--secondary-color); 
+  background-color: var(--secondary-color);
   border-radius: calc(var(--space-unit) * 1);
   height: fit-content;
-  border: 2px solid #1A3453; 
+  border: 2px solid var(--border-color);
 }
 
-.container{
+.container {
   display: flex;
   gap: calc(var(--space-unit) * 1);
   height: fit-content;
 }
 
-.startingItem img{
-  width: calc(var(--space-unit) * 2.5); 
+.startingItem img {
+  width: calc(var(--space-unit) * 2.5);
 }

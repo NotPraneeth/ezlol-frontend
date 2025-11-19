@@ -1,10 +1,9 @@
-
-*{
+* {
   box-sizing: border-box;
-  margin:0;
+  margin: 0;
 }
 
-body{
+body {
   color: #E6EAF0;
   background-color: var(--primary-color);
   padding-inline: calc(var(--space-unit) * 3);
@@ -28,113 +27,118 @@ body{
 }
 
 @font-face {
-    font-family: 'Bebas Neue';
-    src: url('./assets/fonts/BebasNeue-Regular.woff2') format('woff2'),
-        url('./assets/fonts/BebasNeue-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Bebas Neue';
+  src: url('./assets/fonts/BebasNeue-Regular.woff2') format('woff2'),
+    url('./assets/fonts/BebasNeue-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'PP Neue Montreal';
-    src: url('./assets/fonts/PPNeueMontreal-Bold.woff2') format('woff2'),
-        url('./assets/fonts/PPNeueMontreal-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'PP Neue Montreal';
+  src: url('./assets/fonts/PPNeueMontreal-Bold.woff2') format('woff2'),
+    url('./assets/fonts/PPNeueMontreal-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'PP Neue Montreal';
-    src: url('./assets/fonts/PPNeueMontreal-Italic.woff2') format('woff2'),
-        url('./assets/fonts/PPNeueMontreal-Italic.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
+  font-family: 'PP Neue Montreal';
+  src: url('./assets/fonts/PPNeueMontreal-Italic.woff2') format('woff2'),
+    url('./assets/fonts/PPNeueMontreal-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'PP Neue Montreal';
-    src: url('./assets/fonts/PPNeueMontreal-Medium.woff2') format('woff2'),
-        url('./assets/fonts/PPNeueMontreal-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'PP Neue Montreal';
+  src: url('./assets/fonts/PPNeueMontreal-Medium.woff2') format('woff2'),
+    url('./assets/fonts/PPNeueMontreal-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'PP Neue Montreal Book';
-    src: url('./assets/fonts/PPNeueMontreal-Book.woff2') format('woff2'),
-        url('./assets/fonts/PPNeueMontreal-Book.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'PP Neue Montreal Book';
+  src: url('./assets/fonts/PPNeueMontreal-Book.woff2') format('woff2'),
+    url('./assets/fonts/PPNeueMontreal-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'PP Neue Montreal';
-    src: url('./assets/fonts/PPNeueMontreal-Thin.woff2') format('woff2'),
-        url('./assets/fonts/PPNeueMontreal-Thin.woff') format('woff');
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'PP Neue Montreal';
+  src: url('./assets/fonts/PPNeueMontreal-Thin.woff2') format('woff2'),
+    url('./assets/fonts/PPNeueMontreal-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'PP Neue Montreal';
-    src: url('./assets/fonts/PPNeueMontreal-SemiBolditalic.woff2') format('woff2'),
-        url('./assets/fonts/PPNeueMontreal-SemiBolditalic.woff') format('woff');
-    font-weight: 600;
-    font-style: italic;
-    font-display: swap;
+  font-family: 'PP Neue Montreal';
+  src: url('./assets/fonts/PPNeueMontreal-SemiBolditalic.woff2') format('woff2'),
+    url('./assets/fonts/PPNeueMontreal-SemiBolditalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
 }
 
 
 @font-face {
   font-family: 'Array-Wide';
   src: url('./assets/fonts/Array-Wide.woff2') format('woff2'),
-       url('./assets/fonts/Array-Wide.woff') format('woff'),;
+    url('./assets/fonts/Array-Wide.woff') format('woff'), ;
   font-weight: 400;
   font-display: swap;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Array-Regular';
   src: url('./assets/fonts/Array-Regular.woff2') format('woff2'),
-       url('./assets/fonts/Array-Regular.woff') format('woff');
+    url('./assets/fonts/Array-Regular.woff') format('woff');
   font-weight: 400;
   font-display: swap;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Array-Semibold';
   src: url('./assets/fonts/Array-Semibold.woff2') format('woff2'),
-       url('./assets/fonts/Array-Semibold.woff') format('woff');
+    url('./assets/fonts/Array-Semibold.woff') format('woff');
   font-weight: 600;
   font-display: swap;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Array-SemiboldWide';
   src: url('./assets/fonts/Array-SemiboldWide.woff2') format('woff2'),
-       url('./assets/fonts/Array-SemiboldWide.woff') format('woff');
+    url('./assets/fonts/Array-SemiboldWide.woff') format('woff');
   font-weight: 600;
   font-display: swap;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Array-Bold';
   src: url('./assets/fonts/Array-Bold.woff2') format('woff2'),
-       url('./assets/fonts/Array-Bold.woff') format('woff');
+    url('./assets/fonts/Array-Bold.woff') format('woff');
   font-weight: 700;
   font-display: swap;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Array-BoldWide';
   src: url('./assets/fonts/Array-BoldWide.woff2') format('woff2'),
-       url('./assets/fonts/Array-BoldWide.woff') format('woff');
+    url('./assets/fonts/Array-BoldWide.woff') format('woff');
   font-weight: 700;
   font-display: swap;
   font-style: normal;
@@ -142,7 +146,7 @@ body{
 
 
 
-.mainContent{
-  display:flex;
+.mainContent {
+  display: flex;
   flex-direction: column;
 }

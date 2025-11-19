@@ -45,6 +45,7 @@
   color: var(--secondary-text-color);
   transform: translateY(1px);
 }
+
 .searchInput {
   border: none;
   background-color: transparent;
@@ -67,20 +68,43 @@
   gap: calc(var(--space-unit) * 2);
 }
 
-.summonersAndSkillOrder{
-  display:flex;
+.summonersAndSkillOrder {
+  display: flex;
   flex-direction: column;
-  gap: calc(var(--space-unit)*1);
+  gap: calc(var(--space-unit) * 1);
+  /* Allow this column to grow if needed, though usually width is fixed */
 }
 
-.mainContent{
-  display:flex;
+.skillTableComponent {
+  display: flex;
+  /* Ensure child (SkillTable) can fill this container */
   flex-direction: column;
 }
 
-.pregame{
-  display:inline-flex;
-  gap: calc(var(--space-unit)*2);
+.mainContent {
+  display: flex;
+  flex-direction: column;
+}
 
+.pregame {
+  display: inline-flex;
+  gap: calc(var(--space-unit) * 2);
   width: fit-content;
+  /* Ensure columns stretch to match height */
+}
+
+@media (max-width: 768px) {
+  .landingContainerBottom {
+    flex-direction: column;
+  }
+
+  .pregame {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .summonersAndSkillOrder {
+    width: 100%;
+  }
 }
